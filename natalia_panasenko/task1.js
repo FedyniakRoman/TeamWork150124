@@ -4,7 +4,7 @@
 
 
 db.tracks.aggregate([
-  { $match: { duration_secs: { $lte: 1000 * 60 } }},
+  { $match: { duration_secs: { $lt: 1000 * 60 } }},
   { $sample: { size: 3 }},
   { $sort: { duration_secs: 1 } }, 
        {
