@@ -24,7 +24,7 @@ db.tracks.aggregate([
       _id: 0,
       title: 1,
       duration_secs: 1,
-      author_name: "$author.name",
+      fullame: 1,
     }
   }
 ]);
