@@ -1,14 +1,14 @@
 db.tracks.aggregate([
   {
     $match: {
-      duration_seconds: { $lt: 60000 },
+      duration_secs: { $lt: 60000 },
     }
   },
   {
     $sample: { size: 3 }
   },
   {
-    $sort: { duration_seconds: 1 }
+    $sort: { duration_secs: 1 }
   },
   {
     $lookup: {
