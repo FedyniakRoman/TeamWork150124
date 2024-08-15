@@ -12,7 +12,7 @@ db.tracks.aggregate([
   },
 
   {
-    $limit: 3,
+    $sample: { size: 3 }
   },
 
   {
