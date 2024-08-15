@@ -1,12 +1,5 @@
 db.tracks.aggregate([
-    {
-        $lookup: {
-            from: 'users',
-            localField: 'author_id',
-            foreignField: '_id',
-            as: 'author'
-        }
-    },
+
     {
         $match: {
             duration_sec: { $lt: 60 * 1000 }
@@ -17,6 +10,14 @@ db.tracks.aggregate([
     },
     {
         $sort: { duration_sec: 1 }
+    },
+    {
+        $lookup: {
+            from: 'users',
+            localField: 'author_id',
+            foreignField: '_id',
+            as: 'author'
+        }
     },
     {
         $project: {
