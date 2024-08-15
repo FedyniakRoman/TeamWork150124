@@ -12,7 +12,7 @@ db.tracks.aggregate([
   },
   {
     $lookup: {
-      from: "authors",
+      from: "users",
       localField: "author_id",
       foreignField: "_id",
       as: "author",
