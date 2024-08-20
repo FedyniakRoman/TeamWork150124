@@ -1,0 +1,8 @@
+db.users.aggregate([
+$count
+{
+    {
+        $match: { country: 'France' }
+    }
+}
+])
