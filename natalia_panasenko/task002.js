@@ -2,7 +2,7 @@
 
 
 db.tracks.aggregate([
-  { $match: { duration_secs: { $gte: 100 * 50 } } },
+  { $match: { duration_secs: { $gte: 100 * 5 } } },
   {
     $group: {
       _id: null,
